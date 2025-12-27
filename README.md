@@ -2,7 +2,7 @@
 
 ## 📌 Overview
 This project is a simple monitoring application developed during an internship.
-It demonstrates how to connect a hardware sensor to a desktop application Windwos using Python and Arduino.
+It demonstrates how to connect a hardware sensor to a desktop application using Python and Arduino.
 
 The application is provided as a **Windows executable (.exe)** and is **free to download and use** for learning and demonstration purposes.
 
