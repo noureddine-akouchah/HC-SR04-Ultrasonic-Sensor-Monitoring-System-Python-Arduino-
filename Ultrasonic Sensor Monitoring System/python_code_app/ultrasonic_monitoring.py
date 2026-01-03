@@ -233,7 +233,7 @@ class ModernArduinoInterface:
 
         subtitle = ctk.CTkLabel(
             title_container,
-            text="🔬 Système de Contrôle de Conformité v3.0",
+            text="🔬 Compliance Control System v3.0",
             font=ctk.CTkFont(size=16),
             text_color="#e5e7eb"
         )
@@ -258,7 +258,7 @@ class ModernArduinoInterface:
 
         self.connection_status_label = ctk.CTkLabel(
             status_panel,
-            text="DÉCONNECTÉ",
+            text="DISCONNECTED",
             font=ctk.CTkFont(size=12, weight="bold"),
             text_color="#ef4444"
         )
@@ -348,7 +348,7 @@ class ModernArduinoInterface:
 
         title_label = ctk.CTkLabel(
             header,
-            text="🔌 Configuration de Connexion",
+            text="🔌 Connection Configuration",
             font=ctk.CTkFont(size=20, weight="bold"),
             text_color="white"
         )
@@ -364,7 +364,7 @@ class ModernArduinoInterface:
 
         ctk.CTkLabel(
             port_row,
-            text="📡 Port COM:",
+            text="📡 COM Port:",
             font=ctk.CTkFont(size=14, weight="bold")
         ).pack(side="left", padx=(0, 15))
         
@@ -382,7 +382,7 @@ class ModernArduinoInterface:
 
         refresh_btn = ctk.CTkButton(
             port_row,
-            text="🔄 Actualiser",
+            text="🔄 Refresh",
             command=self.refresh_ports,
             width=120,
             height=35,
@@ -415,7 +415,7 @@ class ModernArduinoInterface:
 
         self.connect_btn = ctk.CTkButton(
             connect_row,
-            text="🚀 SE CONNECTER",
+            text="🚀 CONNECT",
             command=self.toggle_connection,
             width=200,
             height=45,
@@ -429,7 +429,7 @@ class ModernArduinoInterface:
         self.auto_reconnect_var = ctk.BooleanVar(value=self.auto_reconnect)
         auto_reconnect_cb = ctk.CTkCheckBox(
             connect_row,
-            text="🔄 Reconnexion automatique",
+            text="🔄 Auto Reconnect",
             variable=self.auto_reconnect_var,
             command=self.toggle_auto_reconnect,
             font=ctk.CTkFont(size=12),
@@ -463,7 +463,7 @@ class ModernArduinoInterface:
 
         title_label = ctk.CTkLabel(
             header,
-            text="📏 Capteur Ultrasonique",
+            text="📏 Ultrasonic Sensor",
             font=ctk.CTkFont(size=20, weight="bold"),
             text_color="white"
         )
@@ -479,7 +479,7 @@ class ModernArduinoInterface:
 
         ctk.CTkLabel(
             threshold_frame,
-            text="⚙️ Configuration des Seuils:",
+            text="⚙️ Threshold Settings:",
             font=ctk.CTkFont(size=16, weight="bold")
         ).pack(pady=(15, 10))
 
@@ -514,7 +514,7 @@ class ModernArduinoInterface:
 
         apply_btn = ctk.CTkButton(
             threshold_controls,
-            text="✅ Appliquer",
+            text="✅ Apply",
             command=self.apply_thresholds,
             width=120,
             height=35,
@@ -552,7 +552,7 @@ class ModernArduinoInterface:
         stats_row.pack(fill="x", padx=20, pady=(0, 20))
 
         # Stats cards
-        for i, (label, color) in enumerate([("Min", "#ef4444"), ("Max", "#f59e0b"), ("Moy", "#06b6d4")]):
+        for i, (label, color) in enumerate([("Min", "#ef4444"), ("Max", "#f59e0b"), ("Avg", "#06b6d4")]):
             stat_card = ctk.CTkFrame(
                 stats_row,
                 fg_color=("#ffffff", "#1f2937"),
@@ -581,7 +581,7 @@ class ModernArduinoInterface:
             else:
                 self.avg_distance_label = ctk.CTkLabel(
                     stat_card,
-                    text="Moy: -- cm",
+                    text="Avg: -- cm",
                     font=ctk.CTkFont(size=12, weight="bold"),
                     text_color=color
                 )
@@ -627,7 +627,7 @@ class ModernArduinoInterface:
 
         title_label = ctk.CTkLabel(
             header,
-            text="🧪 Contrôles de Test",
+            text="🧪 Test Controls",
             font=ctk.CTkFont(size=20, weight="bold"),
             text_color="white"
         )
@@ -643,7 +643,7 @@ class ModernArduinoInterface:
 
         self.status_label = ctk.CTkLabel(
             status_frame,
-            text="En attente de connexion...",
+            text="Waiting for connection...",
             font=ctk.CTkFont(size=18, weight="bold"),
             text_color="#94a3b8"
         )
@@ -655,7 +655,7 @@ class ModernArduinoInterface:
 
         self.led_conforme = ctk.CTkButton(
             led_container,
-            text="✅ CONFORME",
+            text="✅ PASS",
             width=180,
             height=70,
             font=ctk.CTkFont(size=16, weight="bold"),
@@ -668,7 +668,7 @@ class ModernArduinoInterface:
 
         self.led_non_conforme = ctk.CTkButton(
             led_container,
-            text="❌ NON CONFORME",
+            text="❌ FAIL",
             width=180,
             height=70,
             font=ctk.CTkFont(size=16, weight="bold"),
@@ -685,7 +685,7 @@ class ModernArduinoInterface:
 
         conforme_btn = ctk.CTkButton(
             manual_frame,
-            text="✅ Test Conforme",
+            text="✅ Pass Test",
             command=lambda: self.manual_test(True),
             width=200,
             height=55,
@@ -698,7 +698,7 @@ class ModernArduinoInterface:
 
         non_conforme_btn = ctk.CTkButton(
             manual_frame,
-            text="❌ Test Non Conforme",
+            text="❌ Fail Test",
             command=lambda: self.manual_test(False),
             width=200,
             height=55,
@@ -732,7 +732,7 @@ class ModernArduinoInterface:
 
         title_label = ctk.CTkLabel(
             header,
-            text="📊 Statistiques en Temps Réel",
+            text="📊 Real-Time Statistics",
             font=ctk.CTkFont(size=20, weight="bold"),
             text_color="white"
         )
@@ -744,10 +744,10 @@ class ModernArduinoInterface:
 
         # Create stat cards
         stat_configs = [
-            ("Conformes", "#10b981", "self.stats_conforme_label"),
-            ("Non Conformes", "#ef4444", "self.stats_non_conforme_label"),
+            ("Passes", "#10b981", "self.stats_conforme_label"),
+            ("Fails", "#ef4444", "self.stats_non_conforme_label"),
             ("Total Tests", "#8b5cf6", "self.stats_total_label"),
-            ("Taux Réussite", "#06b6d4", "self.success_rate_label")
+            ("Success Rate", "#06b6d4", "self.success_rate_label")
         ]
 
         for i, (title, color, attr_name) in enumerate(stat_configs):
@@ -791,7 +791,7 @@ class ModernArduinoInterface:
         # Reset button
         reset_stats_btn = ctk.CTkButton(
             stats_grid,
-            text="🔄 Réinitialiser",
+            text="🔄 Reset",
             command=self.reset_stats,
             width=150,
             height=40,
@@ -825,7 +825,7 @@ class ModernArduinoInterface:
 
         title_label = ctk.CTkLabel(
             header,
-            text="📋 Journal des Événements",
+            text="📋 Event Log",
             font=ctk.CTkFont(size=20, weight="bold"),
             text_color="white"
         )
@@ -837,7 +837,7 @@ class ModernArduinoInterface:
 
         clear_btn = ctk.CTkButton(
             controls_frame,
-            text="🗑️ Effacer",
+            text="🗑️ Clear",
             command=self.clear_log,
             width=100,
             height=35,
@@ -849,7 +849,7 @@ class ModernArduinoInterface:
 
         save_btn = ctk.CTkButton(
             controls_frame,
-            text="💾 Sauvegarder",
+            text="💾 Save",
             command=self.save_log,
             width=120,
             height=35,
@@ -862,7 +862,7 @@ class ModernArduinoInterface:
         self.auto_scroll_var = ctk.BooleanVar(value=True)
         auto_scroll_cb = ctk.CTkCheckBox(
             controls_frame,
-            text="📜 Défilement automatique",
+            text="📜 Auto Scroll",
             variable=self.auto_scroll_var,
             font=ctk.CTkFont(size=12),
             checkbox_width=20,
@@ -913,7 +913,7 @@ class ModernArduinoInterface:
 
         title_label = ctk.CTkLabel(
             header,
-            text="📈 Informations de Session",
+            text="📈 Session Information",
             font=ctk.CTkFont(size=20, weight="bold"),
             text_color="white"
         )
@@ -925,7 +925,7 @@ class ModernArduinoInterface:
 
         self.session_start_label = ctk.CTkLabel(
             session_details,
-            text="📅 Session non démarrée",
+            text="📅 Session not started",
             font=ctk.CTkFont(size=14, weight="bold"),
             text_color=("#64748b", "#94a3b8")
         )
@@ -961,7 +961,7 @@ class ModernArduinoInterface:
 
         title_label = ctk.CTkLabel(
             table_header,
-            text="📋 Historique Détaillé des Tests",
+            text="📋 Detailed Test History",
             font=ctk.CTkFont(size=20, weight="bold"),
             text_color="white"
         )
@@ -999,7 +999,7 @@ class ModernArduinoInterface:
                  foreground=[('selected', '#ffffff')])
 
         # Create treeview
-        columns = ('🕐 Heure', '✅ Résultat', '📏 Distance', '⏱️ Durée')
+        columns = ('🕐 Time', '✅ Result', '📏 Distance', '⏱️ Duration')
         self.history_tree = ttk.Treeview(
             table_container,
             columns=columns,
@@ -1009,15 +1009,15 @@ class ModernArduinoInterface:
         )
         
         # Configure column headings and widths
-        self.history_tree.heading('🕐 Heure', text='🕐 Heure', anchor='center')
-        self.history_tree.heading('✅ Résultat', text='✅ Résultat', anchor='center')
+        self.history_tree.heading('🕐 Time', text='🕐 Time', anchor='center')
+        self.history_tree.heading('✅ Result', text='✅ Result', anchor='center')
         self.history_tree.heading('📏 Distance', text='📏 Distance (cm)', anchor='center')
-        self.history_tree.heading('⏱️ Durée', text='⏱️ Durée (ms)', anchor='center')
+        self.history_tree.heading('⏱️ Duration', text='⏱️ Duration (ms)', anchor='center')
         
-        self.history_tree.column('🕐 Heure', width=120, anchor='center')
-        self.history_tree.column('✅ Résultat', width=150, anchor='center')
+        self.history_tree.column('🕐 Time', width=120, anchor='center')
+        self.history_tree.column('✅ Result', width=150, anchor='center')
         self.history_tree.column('📏 Distance', width=120, anchor='center')
-        self.history_tree.column('⏱️ Durée', width=120, anchor='center')
+        self.history_tree.column('⏱️ Duration', width=120, anchor='center')
 
         # Add scrollbar
         tree_scroll = ctk.CTkScrollbar(
@@ -1172,7 +1172,7 @@ class ModernArduinoInterface:
 
         title_label = ctk.CTkLabel(
             header,
-            text="📤 Export des Données",
+            text="📤 Data Export",
             font=ctk.CTkFont(size=20, weight="bold"),
             text_color="white"
         )
@@ -1184,7 +1184,7 @@ class ModernArduinoInterface:
 
         csv_btn = ctk.CTkButton(
             export_frame,
-            text="📊 Exporter CSV",
+            text="📊 Export CSV",
             command=self.export_to_csv,
             width=180,
             height=50,
@@ -1197,7 +1197,7 @@ class ModernArduinoInterface:
 
         json_btn = ctk.CTkButton(
             export_frame,
-            text="📋 Exporter JSON",
+            text="📋 Export JSON",
             command=self.export_to_json,
             width=180,
             height=50,
@@ -1242,7 +1242,7 @@ class ModernArduinoInterface:
 
         reset_btn = ctk.CTkButton(
             advanced_frame,
-            text="🔄 Réinitialiser Configuration",
+            text="🔄 Reset Configuration",
             command=self.reset_config,
             width=220,
             height=45,
@@ -1255,7 +1255,7 @@ class ModernArduinoInterface:
 
         log_folder_btn = ctk.CTkButton(
             advanced_frame,
-            text="📁 Ouvrir Dossier Logs",
+            text="📁 Open Logs Folder",
             command=self.open_log_folder,
             width=200,
             height=45,
@@ -1271,7 +1271,7 @@ class ModernArduinoInterface:
 
     def change_color_theme(self, new_theme):
         ctk.set_default_color_theme(new_theme)
-        messagebox.showinfo("Changement de thème", "Redémarrez l'application pour appliquer le nouveau thème de couleur.")
+        messagebox.showinfo("Theme Change", "Restart the application to apply the new color theme.")
 
     # Connection methods (keeping the original logic with modern UI updates)
     def refresh_ports(self):
@@ -1291,7 +1291,7 @@ class ModernArduinoInterface:
                 self.port_var.set(port_list[0])
         else:
             self.port_var.set("")
-            self.log_message("⚠️ Aucun port série détecté")
+            self.log_message("⚠️ No serial port detected")
 
     def toggle_connection(self):
         if self.is_running:
@@ -1302,7 +1302,7 @@ class ModernArduinoInterface:
     def connect(self):
         selected_port_display = self.port_var.get()
         if not selected_port_display:
-            messagebox.showwarning("Port manquant", "Veuillez sélectionner un port COM.")
+            messagebox.showwarning("Missing Port", "Please select a COM port.")
             return
 
         selected_port = selected_port_display.split(' - ')[0]
@@ -1320,14 +1320,14 @@ class ModernArduinoInterface:
             self.start_reading_thread()
             self.start_connection_timer()
             
-            self.log_message("🚀 Connecté sur {} à {} bauds".format(selected_port, self.baudrate))
+            self.log_message("🚀 Connected to {} at {} baud".format(selected_port, self.baudrate))
             self.save_config()
             
         except serial.SerialException as e:
-            messagebox.showerror("Erreur de connexion", 
-                               "Impossible de se connecter au port {}\n\nErreur: {}".format(selected_port, str(e)))
+            messagebox.showerror("Connection Error", 
+                               "Unable to connect to port {}\n\nError: {}".format(selected_port, str(e)))
             self.update_connection_ui(False)
-            self.log_message("❌ Échec connexion sur {}: {}".format(selected_port, str(e)))
+            self.log_message("❌ Connection failed on {}: {}".format(selected_port, str(e)))
 
     def disconnect(self):
         self.is_running = False
@@ -1339,29 +1339,29 @@ class ModernArduinoInterface:
         
         self.update_connection_ui(False)
         self.reset_status()
-        self.log_message("🔌 Déconnecté")
+        self.log_message("🔌 Disconnected")
 
     def update_connection_ui(self, connected):
         if connected:
-            self.connection_status_label.configure(text="CONNECTÉ", text_color="#10b981")
+            self.connection_status_label.configure(text="CONNECTED", text_color="#10b981")
             self.connection_indicator.configure(text_color="#10b981")
             self.connect_btn.configure(
-                text="🔌 SE DÉCONNECTER",
+                text="🔌 DISCONNECT",
                 fg_color=("#ef4444", "#dc2626"),
                 hover_color=("#dc2626", "#b91c1c")
             )
             self.port_combo.configure(state="disabled")
-            self.status_label.configure(text="✅ En attente de données...", text_color="#10b981")
+            self.status_label.configure(text="✅ Waiting for data...", text_color="#10b981")
         else:
-            self.connection_status_label.configure(text="DÉCONNECTÉ", text_color="#ef4444")
+            self.connection_status_label.configure(text="DISCONNECTED", text_color="#ef4444")
             self.connection_indicator.configure(text_color="#ef4444")
             self.connect_btn.configure(
-                text="🚀 SE CONNECTER",
+                text="🚀 CONNECT",
                 fg_color=("#3b82f6", "#1e40af"),
                 hover_color=("#2563eb", "#1d4ed8")
             )
             self.port_combo.configure(state="readonly")
-            self.status_label.configure(text="⏳ En attente de connexion...", text_color="#94a3b8")
+            self.status_label.configure(text="⏳ Waiting for connection...", text_color="#94a3b8")
 
     def start_connection_timer(self):
         def update_timer():
@@ -1369,10 +1369,10 @@ class ModernArduinoInterface:
                 duration = datetime.now() - self.session_start_time
                 hours, remainder = divmod(int(duration.total_seconds()), 3600)
                 minutes, seconds = divmod(remainder, 60)
-                time_str = f"⏱️ Durée: {hours:02d}:{minutes:02d}:{seconds:02d}"
+                time_str = f"⏱️ Duration: {hours:02d}:{minutes:02d}:{seconds:02d}"
                 self.session_duration_label.configure(text=time_str)
                 self.session_start_label.configure(
-                    text=f"📅 Démarrée: {self.session_start_time.strftime('%H:%M:%S')}"
+                    text=f"📅 Started: {self.session_start_time.strftime('%H:%M:%S')}"
                 )
                 self.root.after(1000, update_timer)
         
@@ -1403,7 +1403,7 @@ class ModernArduinoInterface:
                 clean_msg = "Unexpected error reading Arduino data: {}".format(str(e))
                 self.logger.error(clean_msg)
                 if errors >= max_errors:
-                    self.log_message("❌ Erreurs multiples: {}".format(str(e)))
+                    self.log_message("❌ Multiple errors: {}".format(str(e)))
                     self.root.after(0, self.disconnect)
                     break
 
@@ -1440,7 +1440,7 @@ class ModernArduinoInterface:
         except Exception as e:
             clean_msg = "Error processing Arduino data '{}': {}".format(data, str(e))
             self.logger.error(clean_msg)
-            self.log_message("⚠️ Erreur traitement: {}".format(data))
+            self.log_message("⚠️ Processing error: {}".format(data))
 
     def parse_arduino_data(self, data):
         try:
@@ -1476,7 +1476,7 @@ class ModernArduinoInterface:
 
     def process_distance_data(self, distance):
         if not (0 <= distance <= 400):
-            self.log_message("⚠️ Distance hors plage: {:.1f}cm".format(distance))
+            self.log_message("⚠️ Distance out of range: {:.1f}cm".format(distance))
             return
             
         self.current_distance = distance
@@ -1487,11 +1487,11 @@ class ModernArduinoInterface:
         
         self.root.after(0, self.update_distance_display)
         
-        self.log_message("📏 Mesure: {:.1f} cm".format(distance))
+        self.log_message("📏 Measurement: {:.1f} cm".format(distance))
 
     def update_distance(self, distance):
         if not (0 <= distance <= 400):
-            self.log_message("⚠️ Distance suspecte: {:.1f}cm".format(distance))
+            self.log_message("⚠️ Suspicious distance: {:.1f}cm".format(distance))
             return
             
         self.current_distance = distance
@@ -1511,11 +1511,11 @@ class ModernArduinoInterface:
             max_val = float(self.max_entry.get())
             
             if min_val >= max_val:
-                messagebox.showerror("Erreur", "La valeur minimum doit être inférieure à la valeur maximum")
+                messagebox.showerror("Error", "Minimum value must be less than maximum value")
                 return
                 
             if min_val < 0 or max_val < 0:
-                messagebox.showerror("Erreur", "Les valeurs doivent être positives")
+                messagebox.showerror("Error", "Values must be positive")
                 return
                 
             self.min_threshold = min_val
@@ -1528,18 +1528,18 @@ class ModernArduinoInterface:
                 self.check_conformity(self.current_distance)
                 
         except ValueError:
-            messagebox.showerror("Erreur", "Veuillez entrer des valeurs numériques valides")
+            messagebox.showerror("Error", "Please enter valid numeric values")
 
     def check_conformity(self, distance):
         """Check if distance is within thresholds and update conformity status"""
         if hasattr(self, 'min_threshold') and hasattr(self, 'max_threshold'):
             if self.min_threshold <= distance <= self.max_threshold:
-                self.conformity_label.configure(text="✅ CONFORME", text_color="#10b981")
-                # Automatically trigger conforme result
+                self.conformity_label.configure(text="✅ PASS", text_color="#10b981")
+                # Automatically trigger pass result
                 self.root.after(100, lambda: self.process_result(True))
             else:
-                self.conformity_label.configure(text="❌ NON CONFORME", text_color="#ef4444")
-                # Automatically trigger non-conforme result
+                self.conformity_label.configure(text="❌ FAIL", text_color="#ef4444")
+                # Automatically trigger fail result
                 self.root.after(100, lambda: self.process_result(False))
         else:
             self.conformity_label.configure(text="")
@@ -1569,7 +1569,7 @@ class ModernArduinoInterface:
                 
                 self.min_distance_label.configure(text="Min: {:.1f} cm".format(min_dist))
                 self.max_distance_label.configure(text="Max: {:.1f} cm".format(max_dist))
-                self.avg_distance_label.configure(text="Moy: {:.1f} cm".format(avg_dist))
+                self.avg_distance_label.configure(text="Avg: {:.1f} cm".format(avg_dist))
                 
         except Exception as e:
             clean_msg = "Error updating distance display: {}".format(str(e))
@@ -1577,22 +1577,22 @@ class ModernArduinoInterface:
             self.distance_label.configure(text="-- cm", text_color="#06b6d4")
 
     def reset_distance_stats(self):
-        if messagebox.askyesno("Confirmation", "Voulez-vous vraiment réinitialiser les statistiques de distance ?"):
+        if messagebox.askyesno("Confirmation", "Are you sure you want to reset the distance statistics?"):
             self.distance_history.clear()
             self.current_distance = 0.0
             
             self.distance_label.configure(text="-- cm")
             self.min_distance_label.configure(text="Min: -- cm")
             self.max_distance_label.configure(text="Max: -- cm")
-            self.avg_distance_label.configure(text="Moy: -- cm")
+            self.avg_distance_label.configure(text="Avg: -- cm")
             self.conformity_label.configure(text="")
             
-            self.log_message("🔄 Statistiques de distance réinitialisées")
+            self.log_message("🔄 Distance statistics reset")
 
     def attempt_reconnection(self):
         max_attempts = 3
         for attempt in range(max_attempts):
-            self.log_message("🔄 Tentative de reconnexion {}/{}".format(attempt + 1, max_attempts))
+            self.log_message("🔄 Reconnection attempt {}/{}".format(attempt + 1, max_attempts))
             time.sleep(2)
             try:
                 if self.port:
@@ -1600,13 +1600,13 @@ class ModernArduinoInterface:
                     time.sleep(2)
                     self.is_running = True
                     self.start_reading_thread()
-                    self.log_message("✅ Reconnexion réussie")
+                    self.log_message("✅ Reconnection successful")
                     return
             except Exception as e:
                 clean_msg = "Reconnection attempt {} failed: {}".format(attempt + 1, str(e))
                 self.logger.error(clean_msg)
         
-        self.log_message("❌ Reconnexion échouée")
+        self.log_message("❌ Reconnection failed")
         self.disconnect()
 
     def process_result(self, conforme):
@@ -1614,14 +1614,14 @@ class ModernArduinoInterface:
         
         if conforme:
             self.conforme_count += 1
-            self.update_status("✅ CONFORME", "#10b981")
-            self.log_message("✅ Résultat: CONFORME")
-            result_text = "CONFORME"
+            self.update_status("✅ PASS", "#10b981")
+            self.log_message("✅ Result: PASS")
+            result_text = "PASS"
         else:
             self.non_conforme_count += 1
-            self.update_status("❌ NON CONFORME", "#ef4444")
-            self.log_message("❌ Résultat: NON CONFORME")
-            result_text = "NON CONFORME"
+            self.update_status("❌ FAIL", "#ef4444")
+            self.log_message("❌ Result: FAIL")
+            result_text = "FAIL"
         
         self.test_history.append({
             'timestamp': timestamp,
@@ -1640,9 +1640,9 @@ class ModernArduinoInterface:
         
         # Color coding for tree items
         if conforme:
-            self.history_tree.set(item_id, '✅ Résultat', '✅ CONFORME')
+            self.history_tree.set(item_id, '✅ Result', '✅ PASS')
         else:
-            self.history_tree.set(item_id, '✅ Résultat', '❌ NON CONFORME')
+            self.history_tree.set(item_id, '✅ Result', '❌ FAIL')
         
         self.update_stats()
         self.play_notification_sound(conforme)
@@ -1693,9 +1693,9 @@ class ModernArduinoInterface:
 
     def reset_status(self):
         if self.is_running:
-            self.status_label.configure(text="⏳ En attente...", text_color="#94a3b8")
+            self.status_label.configure(text="⏳ Waiting...", text_color="#94a3b8")
         else:
-            self.status_label.configure(text="⏳ En attente de connexion...", text_color="#94a3b8")
+            self.status_label.configure(text="⏳ Waiting for connection...", text_color="#94a3b8")
         
         self.led_conforme.configure(
             fg_color=("#374151", "#374151"),
@@ -1718,7 +1718,7 @@ class ModernArduinoInterface:
         self.success_rate_label.configure(text="{:.1f}%".format(success_rate))
 
     def reset_stats(self):
-        if messagebox.askyesno("Confirmation", "Voulez-vous vraiment réinitialiser toutes les statistiques ?"):
+        if messagebox.askyesno("Confirmation", "Are you sure you want to reset all statistics?"):
             self.conforme_count = 0
             self.non_conforme_count = 0
             self.test_history.clear()
@@ -1728,14 +1728,14 @@ class ModernArduinoInterface:
                 self.history_tree.delete(item)
             
             self.update_stats()
-            self.log_message("🔄 Statistiques réinitialisées")
+            self.log_message("🔄 Statistics reset")
 
     def new_test_session(self):
-        if messagebox.askyesno("Nouvelle session", "Démarrer une nouvelle session de test ?"):
+        if messagebox.askyesno("New session", "Start a new test session?"):
             self.reset_stats()
             self.reset_distance_stats()
             self.session_start_time = datetime.now() if self.is_running else None
-            self.log_message("🎉 Nouvelle session de test démarrée")
+            self.log_message("🎉 New test session started")
 
     def toggle_auto_reconnect(self):
         self.auto_reconnect = self.auto_reconnect_var.get()
@@ -1754,40 +1754,40 @@ class ModernArduinoInterface:
 
     def test_connection(self):
         if not self.is_running:
-            messagebox.showwarning("Test impossible", "Veuillez d'abord vous connecter à l'Arduino.")
+            messagebox.showwarning("Test unavailable", "Please connect to the Arduino first.")
             return
         
         try:
             self.arduino.write(b"TEST\n")
-            self.log_message("🧪 Commande de test envoyée")
+            self.log_message("🧪 Test command sent")
         except Exception as e:
-            messagebox.showerror("Erreur de test", "Impossible d'envoyer la commande de test:\n{}".format(str(e)))
+            messagebox.showerror("Test Error", "Unable to send the test command:\n{}".format(str(e)))
 
     def send_custom_command(self):
         if not self.is_running:
-            messagebox.showwarning("Connexion requise", "Veuillez d'abord vous connecter à l'Arduino.")
+            messagebox.showwarning("Connection required", "Please connect to the Arduino first.")
             return
         
         # Create custom dialog for command input
-        dialog = ctk.CTkInputDialog(text="Entrez la commande à envoyer:", title="Commande personnalisée")
+        dialog = ctk.CTkInputDialog(text="Enter the command to send:", title="Custom Command")
         command = dialog.get_input()
         
         if command:
             try:
                 self.arduino.write("{}\n".format(command).encode())
-                self.log_message("📤 Commande envoyée: {}".format(command))
+                self.log_message("📤 Command sent: {}".format(command))
             except Exception as e:
-                messagebox.showerror("Erreur", "Impossible d'envoyer la commande:\n{}".format(str(e)))
+                messagebox.showerror("Error", "Unable to send the command:\n{}".format(str(e)))
 
     def export_to_csv(self):
         if not self.test_history:
-            messagebox.showwarning("Aucune donnée", "Aucun test à exporter.")
+            messagebox.showwarning("No data", "No tests to export.")
             return
         
         filename = filedialog.asksaveasfilename(
             defaultextension=".csv",
             filetypes=[("CSV files", "*.csv"), ("All files", "*.*")],
-            title="Exporter vers CSV"
+            title="Export to CSV"
         )
         
         if filename:
@@ -1805,20 +1805,20 @@ class ModernArduinoInterface:
                             'Distance_cm': test.get('distance', 0.0)
                         })
                 
-                self.log_message("📊 Données exportées vers: {}".format(filename))
-                messagebox.showinfo("Export réussi", "Données exportées vers:\n{}".format(filename))
+                self.log_message("📊 Data exported to: {}".format(filename))
+                messagebox.showinfo("Export successful", "Data exported to:\n{}".format(filename))
             except Exception as e:
-                messagebox.showerror("Erreur d'export", "Impossible d'exporter les données:\n{}".format(str(e)))
+                messagebox.showerror("Export Error", "Unable to export data:\n{}".format(str(e)))
 
     def export_to_json(self):
         if not self.test_history:
-            messagebox.showwarning("Aucune donnée", "Aucun test à exporter.")
+            messagebox.showwarning("No data", "No tests to export.")
             return
         
         filename = filedialog.asksaveasfilename(
             defaultextension=".json",
             filetypes=[("JSON files", "*.json"), ("All files", "*.*")],
-            title="Exporter vers JSON"
+            title="Export to JSON"
         )
         
         if filename:
@@ -1856,16 +1856,16 @@ class ModernArduinoInterface:
                 with open(filename, 'w', encoding='utf-8') as jsonfile:
                     json.dump(export_data, jsonfile, indent=2, ensure_ascii=False)
                 
-                self.log_message("📋 Données exportées vers: {}".format(filename))
-                messagebox.showinfo("Export réussi", "Données exportées vers:\n{}".format(filename))
+                self.log_message("📋 Data exported to: {}".format(filename))
+                messagebox.showinfo("Export successful", "Data exported to:\n{}".format(filename))
             except Exception as e:
-                messagebox.showerror("Erreur d'export", "Impossible d'exporter les données:\n{}".format(str(e)))
+                messagebox.showerror("Export Error", "Unable to export data:\n{}".format(str(e)))
 
     def save_log(self):
         filename = filedialog.asksaveasfilename(
             defaultextension=".txt",
             filetypes=[("Text files", "*.txt"), ("All files", "*.*")],
-            title="Sauvegarder le journal"
+            title="Save Log"
         )
         
         if filename:
@@ -1873,12 +1873,12 @@ class ModernArduinoInterface:
                 log_content = self.log_text.get("1.0", "end")
                 with open(filename, 'w', encoding='utf-8') as f:
                     f.write(log_content)
-                messagebox.showinfo("Sauvegarde réussie", "Journal sauvegardé vers:\n{}".format(filename))
+                messagebox.showinfo("Save successful", "Log saved to:\n{}".format(filename))
             except Exception as e:
-                messagebox.showerror("Erreur", "Impossible de sauvegarder le journal:\n{}".format(str(e)))
+                messagebox.showerror("Error", "Unable to save the log:\n{}".format(str(e)))
 
     def reset_config(self):
-        if messagebox.askyesno("Réinitialiser", "Voulez-vous vraiment réinitialiser la configuration ?"):
+        if messagebox.askyesno("Reset", "Are you sure you want to reset the configuration?"):
             try:
                 if self.config_file.exists():
                     self.config_file.unlink()
@@ -1891,10 +1891,10 @@ class ModernArduinoInterface:
                 self.auto_reconnect_var.set(False)
                 self.sound_var.set(True)
                 
-                self.log_message("🔄 Configuration réinitialisée")
-                messagebox.showinfo("Réinitialisation", "Configuration réinitialisée avec succès.")
+                self.log_message("🔄 Configuration reset")
+                messagebox.showinfo("Reset", "Configuration reset successfully.")
             except Exception as e:
-                messagebox.showerror("Erreur", "Impossible de réinitialiser la configuration:\n{}".format(str(e)))
+                messagebox.showerror("Error", "Unable to reset configuration:\n{}".format(str(e)))
 
     def open_log_folder(self):
         import os
@@ -1907,51 +1907,51 @@ class ModernArduinoInterface:
             elif os.name == 'posix':
                 subprocess.run(['open' if 'darwin' in os.uname().sysname.lower() else 'xdg-open', log_dir])
         except Exception as e:
-            messagebox.showerror("Erreur", "Impossible d'ouvrir le dossier:\n{}".format(str(e)))
+            messagebox.showerror("Error", "Unable to open folder:\n{}".format(str(e)))
 
     def show_help(self):
         help_text = """
-🚀 GUIDE D'UTILISATION - AZURA QUALITY CONTROL v3.0
+    🚀 USER GUIDE - AZURA QUALITY CONTROL v3.0
 
-🔧 CONNEXION:
-• Sélectionnez votre port COM Arduino dans la liste déroulante
-• Choisissez le baudrate approprié (généralement 9600)
-• Cliquez sur "SE CONNECTER" pour établir la liaison
-• L'indicateur de statut passe au vert quand connecté
+    🔧 CONNECTION:
+    - Select your Arduino COM port from the dropdown
+    - Choose the correct baudrate (usually 9600)
+    - Click "CONNECT" to establish the link
+    - The status indicator turns green when connected
 
-📏 CAPTEUR ULTRASONIQUE:
-• Configurez les seuils Min/Max de conformité en centimètres
-• Cliquez sur "Appliquer" pour valider les nouveaux seuils
-• La distance s'affiche en temps réel avec code couleur
-• Les tests de conformité sont automatiques selon les seuils
+    📏 ULTRASONIC SENSOR:
+    - Configure Min/Max thresholds in centimeters
+    - Click "Apply" to save thresholds
+    - Distance displays in real-time with color coding
+    - Conformity tests run automatically based on thresholds
 
-🧪 TESTS MANUELS:
-• Utilisez les boutons "Test Conforme" et "Test Non Conforme"
-• Les LEDs virtuelles s'allument selon le résultat
-• L'historique est enregistré automatiquement
+    🧪 MANUAL TESTS:
+    - Use "Pass Test" and "Fail Test" buttons
+    - Virtual LEDs light according to the result
+    - History is recorded automatically
 
-📊 STATISTIQUES:
-• Consultez les stats en temps réel dans les cartes colorées
-• Visualisez l'historique détaillé dans l'onglet Statistiques
-• Exportez vos données en CSV ou JSON pour analyse
+    📊 STATISTICS:
+    - View real-time stats in the colored cards
+    - See detailed history in the Statistics tab
+    - Export your data to CSV or JSON for analysis
 
-⚙️ PARAMÈTRES:
-• Changez le thème d'apparence (Clair/Sombre/Système)
-• Modifiez le thème de couleur (Bleu/Vert/Bleu Foncé)
-• Activez/désactivez les notifications sonores
-• Gérez la configuration avancée
+    ⚙️ SETTINGS:
+    - Change appearance (Light/Dark/System)
+    - Change color theme (blue/green/dark-blue)
+    - Enable/disable notification sounds
+    - Manage advanced configuration
 
-🔄 FONCTIONNALITÉS AVANCÉES:
-• Reconnexion automatique en cas de perte de connexion
-• Sauvegarde automatique de la configuration
-• Journalisation complète des événements
-• Interface responsive et moderne
+    🔄 ADVANCED FEATURES:
+    - Auto-reconnect on connection loss
+    - Configuration auto-save
+    - Full event logging
+    - Modern responsive UI
 
-Pour plus d'aide technique, consultez la documentation complète.
+    For more help, consult the full documentation.
         """
         
         help_window = ctk.CTkToplevel(self.root)
-        help_window.title("📚 Guide d'Utilisation")
+        help_window.title("📚 User Guide")
         help_window.geometry("700x600")
         help_window.transient(self.root)
         help_window.grab_set()
@@ -1963,7 +1963,7 @@ Pour plus d'aide technique, consultez la documentation complète.
         
         title_label = ctk.CTkLabel(
             header_frame,
-            text="📚 Guide d'Utilisation Complet",
+            text="📚 Complete User Guide",
             font=ctk.CTkFont(size=24, weight="bold"),
             text_color="white"
         )
@@ -1983,7 +1983,7 @@ Pour plus d'aide technique, consultez la documentation complète.
         # Close button
         close_btn = ctk.CTkButton(
             help_window,
-            text="✅ Fermer",
+            text="✅ Close",
             command=help_window.destroy,
             width=120,
             height=40,
@@ -1993,37 +1993,36 @@ Pour plus d'aide technique, consultez la documentation complète.
 
     def show_about(self):
         about_text = """
-⚡ ULTRASONIC MONITORING SYSTEM
-Version 1.0 - Interface Moderne
+    ⚡ ULTRASONIC MONITORING SYSTEM
+    Version 1.0 - Modern Interface
 
-🎯 DÉVELOPPEMENT:
-Projet réalisé par Noreddine Akouchah
+    🎯 DEVELOPMENT:
+    Project by Noreddine Akouchah
 
+    🛠 TECHNOLOGIES:
+    • Python 3.8+
+    • CustomTkinter (Modern UI)
+    • PySerial (Serial communication)
+    • Threading (Real-time processing)
 
-🛠️ TECHNOLOGIES:
-• Python 3.8+
-• CustomTkinter (Interface moderne)
-• PySerial (Communication série)
-• Threading (Traitement temps réel)
+    🎨 FEATURES:
+    • Modern dark interface with gradients
+    • Colorful cards and smooth animations
+    • Styled transparent tables
+    • Virtual LED indicators
+    • Real-time statistics
+    • Advanced data export
 
-🎨 FONCTIONNALITÉS:
-• Interface sombre moderne avec gradients
-• Cartes colorées et animations fluides
-• Tableaux transparents avec style
-• Indicateurs LED virtuels
-• Statistiques en temps réel
-• Export de données avancé
+    📅 LAST UPDATED:
+    December 2025
 
-📅 DERNIÈRE MISE À JOUR:
-Décembre 2025
-
-© 2025 - Système de Contrôle Qualité Ultrasonic Monitoring
-Tous droits réservés
+    © 2025 - Ultrasonic Monitoring Quality Control System
+    All rights reserved
         """
         
         # Create custom about dialog
         about_window = ctk.CTkToplevel(self.root)
-        about_window.title("ℹ️ À Propos")
+        about_window.title("ℹ️ About")
         about_window.geometry("500x400")
         about_window.transient(self.root)
         about_window.grab_set()
@@ -2056,7 +2055,7 @@ Tous droits réservés
         # Close button
         close_btn = ctk.CTkButton(
             about_window,
-            text="✅ Fermer",
+            text="✅ Close",
             command=about_window.destroy,
             width=120,
             height=40,
@@ -2096,13 +2095,13 @@ Tous droits réservés
         self.root.after(0, task)
 
     def clear_log(self):
-        if messagebox.askyesno("Confirmation", "Voulez-vous vraiment effacer le journal ?"):
+        if messagebox.askyesno("Confirmation", "Are you sure you want to clear the log?"):
             self.log_text.delete("1.0", "end")
-            self.log_message("🗑️ Journal effacé")
+            self.log_message("🗑️ Log cleared")
 
     def on_closing(self):
         if self.is_running:
-            if messagebox.askyesno("Fermeture", "Une connexion est active. Voulez-vous vraiment quitter ?"):
+            if messagebox.askyesno("Close", "A connection is active. Are you sure you want to exit?"):
                 self.disconnect()
                 self.save_config()
                 self.root.destroy()
@@ -2119,7 +2118,7 @@ Tous droits réservés
         except Exception as e:
             clean_msg = "Unexpected error: {}".format(str(e))
             self.logger.error(clean_msg)
-            messagebox.showerror("Erreur critique", "Une erreur inattendue s'est produite:\n{}".format(str(e)))
+            messagebox.showerror("Critical Error", "An unexpected error occurred:\n{}".format(str(e)))
 
 if __name__ == "__main__":
     try:
