@@ -1,6 +1,4 @@
-// Azura Quality Control System v3.0 (Code Arduino Complet)
-// Mesure de longueur de palet avec HC-SR04, affichage LCD I2C,
-// activation de relais, envoi vers PC via port serie
+
 
 #include <Wire.h>
 #include <LiquidCrystal_I2C.h>
@@ -35,7 +33,7 @@ void setup() {
   lcd.init();
   lcd.backlight();
   lcd.setCursor(0, 0);
-  lcd.print("Azura QC System");
+  lcd.print("ultrasonic_monitoring");
   delay(2000);
   lcd.clear();
 }
@@ -105,3 +103,4 @@ void gererRelais() {
     relais_actifs = false;
   }
 }
+
